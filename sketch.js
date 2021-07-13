@@ -1,63 +1,37 @@
-var n1,n2;
-var b1,b2,b3,b4;
+var btn_red;
+var btn_green;
+
+var r = 0;
+var g = 0;
+var b = 0;
 
 function setup() {
+  createCanvas(800, 400); 
   
-  createCanvas(800, 400);
-  
-  num1 = createInput();
-  num1.position(5, 60);
-  
-  num2 = createInput();
-  num2.position(200, 60);
-  
-  b1 = createButton("ADD");
-  b1.position(10, 200);
-  b1.mousePressed(add);
-  
-  b2 = createButton("Multiply");
-  b2.position(200, 200);
-  b2.mousePressed(mul);
-  
-  b3 = createButton("DIVISION");
-  b3.position(300, 200);
-  b3.mousePressed(div);
-  
-  b4 = createButton("SUBTRACTION");
-  b4.position(400, 200);
-  b4.mousePressed(sub);
-  
-  
-  textAlign(CENTER);
-  textSize(15);
+  btn_red = createButton("Red");
+  btn_red.position(100, 50);
+  btn_red.mousePressed(red_btn);
+
+  btn_green = createButton("Green");
+  btn_green.position(200, 50);
+  btn_green.mousePressed(green_btn);
 }
 
-function draw() {
-  background(200,10,200)
-  text("Number 1",70,50)
-  text("Number 2",270,50)
-  
-  n1=parseInt(num1.value())
-  n2=parseInt(num2.value())
-
-}
-
-function add()
+function draw() 
 {
-  console.log(n1+n2)
+  background(r,g,b);
 }
 
-function mul()
+function red_btn()
 {
-  console.log(n1*n2)
+  r = 225;
+  g = 0;
+  b = 0;
 }
 
-function div()
+function green_btn()
 {
-  console.log(n1/n2)
-}
-
-function sub()
-{
-  console.log(n1-n2)
+  r = 0;
+  g = 225;
+  b = 0;
 }
